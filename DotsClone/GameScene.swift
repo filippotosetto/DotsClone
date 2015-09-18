@@ -8,6 +8,27 @@
 
 import SpriteKit
 
+
+
+func pointForColumn(column: Int, row: Int) -> CGPoint {
+    return CGPointMake(
+        CGFloat(column) * TileWidth + TileWidth/2,
+        CGFloat(row) * TileHeight + TileHeight/2
+    )
+}
+
+func convertPointInGrid(point: CGPoint) -> (success: Bool, column: Int, row: Int) {
+    if  point.x >= 0 &&
+        point.x < CGFloat(NumColumns) * TileWidth &&
+        point.y >= 0 &&
+        point.y < CGFloat(NumRows)*TileHeight
+    {
+        return (true, Int(point.x / TileWidth), Int(point.y / TileHeight))
+    } else {
+        return (false, 0, 0)  // invalid location
+    }
+}
+
 protocol GameSceneDelegate {
     func didFindMatches()
     func didSetNewScore(score: Int)
@@ -43,9 +64,7 @@ class GameScene: SKScene {
         
         addChild(gameLayer)
         
-        let layerPosition = CGPoint(x: -TileWidth * CGFloat(NumColumns) / 2, y: -TileHeight * CGFloat(NumRows) / 2)
-        
-        dotsLayer.position = layerPosition
+        dotsLayer.position = CGPoint(x: -TileWidth * CGFloat(NumColumns) / 2, y: -TileHeight * CGFloat(NumRows) / 2)
         gameLayer.addChild(dotsLayer)
     }
 
@@ -66,8 +85,8 @@ extension GameScene {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch = touches.first
         let location = touch!.locationInNode(dotsLayer)
-        let (success, column, row) = convertPoint(location)
-        
+        let (success, column, row) = convertPointInGrid(location)
+
         if success, let dot = level.dotAtPosition(column: column, row: row) {
             chain.addDot(dot)
             startPoint = dot.sprite?.position
@@ -80,7 +99,7 @@ extension GameScene {
             let touch = touches.first
             endPoint = touch!.locationInNode(dotsLayer)
             
-            let (success, column, row) = convertPoint(endPoint!)
+            let (success, column, row) = convertPointInGrid(endPoint!)
             if success, let dot = level.dotAtPosition(column: column, row: row) {
                 
                 // TODO: this logic needs to be refactored
@@ -160,32 +179,20 @@ extension GameScene {
     
     func addSpritesForDots(dots: Set<Dot>) {
         for dot in dots {
-            let sprite: SKShapeNode = addSpriteForDot(dot, position: pointForColumn(dot.column, row:dot.row))
-            animateDotAppearence(sprite)
+            addSpriteForDot(dot, position: pointForColumn(dot.column, row:dot.row)).appearenceAnimation()
         }
     }
     
-    private func addSpriteForDot(dot: Dot, position: CGPoint) -> SKShapeNode {
-        let sprite = SKShapeNode(circleOfRadius: SpriteSize)
-        sprite.fillColor = dot.properColor
-        sprite.position = position
+    private func addSpriteForDot(dot: Dot, position: CGPoint) -> SKShapeNode{
+        let sprite = SKShapeNode.setup(dot, position: position)
         dotsLayer.addChild(sprite)
-        dot.sprite = sprite
-        
         return sprite
     }
     
     func removeAllDots(completion: () -> ()) {
         
-        for sprite in dotsLayer.children {
-            sprite.runAction(
-                SKAction.sequence([
-                    SKAction.waitForDuration(0.25, withRange: 0.5),
-                    SKAction.group([
-                        SKAction.fadeOutWithDuration(0.25),
-                        SKAction.scaleTo(0.0, duration: 0.25)
-                        ])
-                    ]))
+        for sprite: SKShapeNode in dotsLayer.children as! [SKShapeNode] {
+            sprite.removeAnimation()
         }
         
         runAction(SKAction.waitForDuration(1.0)) {
@@ -202,56 +209,26 @@ extension GameScene {
 //MARK: Animations
 extension GameScene {
     
-    func animateDotAppearence(sprite: SKShapeNode) {
-
-        sprite.alpha = 0
-        sprite.xScale = 0.5
-        sprite.yScale = 0.5
-        
-        sprite.runAction(
-            SKAction.sequence([
-                SKAction.waitForDuration(0.25, withRange: 0.5),
-                SKAction.group([
-                    SKAction.fadeInWithDuration(0.25),
-                    SKAction.scaleTo(1.0, duration: 0.25)
-                    ])
-                ]))
-    }
-    
     func animateMatchedDots(chain: Chain, completion: () -> ()) {
         for dot in chain.dots {
             if let sprite = dot.sprite where sprite.actionForKey("removing") == nil {
-                let scaleAction = SKAction.scaleTo(0.1, duration: 0.3)
-                scaleAction.timingMode = .EaseOut
-                sprite.runAction(SKAction.sequence([scaleAction, SKAction.removeFromParent()]), withKey:"removing")
+                sprite.animateMatches()
             }
         }
-
         runAction(SKAction.waitForDuration(0.3), completion: completion)
     }
-    
     
     func animateFallingDots(columns: [[Dot]], completion: () -> ()) {
         var longestDuration: NSTimeInterval = 0
         for array in columns {
             for (idx, dot) in array.enumerate() {
-                let newPosition = pointForColumn(dot.column, row: dot.row)
-                let delay = 0.05 + 0.15 * NSTimeInterval(idx)
-                let sprite = dot.sprite!
-                
-                let duration = NSTimeInterval(((sprite.position.y - newPosition.y) / TileHeight) * 0.1)
-                longestDuration = max(longestDuration, duration + delay)
-                let moveAction = SKAction.moveTo(newPosition, duration: duration)
-                moveAction.timingMode = .EaseOut
-                sprite.runAction(
-                    SKAction.sequence([
-                        SKAction.waitForDuration(delay),
-                        moveAction]))
+                let totalDuration = dot.sprite!.animateFalling(dot, idx: idx)
+
+                longestDuration = max(longestDuration, totalDuration)
             }
         }
         runAction(SKAction.waitForDuration(longestDuration), completion: completion)
     }
-    
     
     func animateNewDots(columns: [[Dot]], completion: () -> ()) {
         var longestDuration: NSTimeInterval = 0
@@ -262,22 +239,9 @@ extension GameScene {
             for (idx, dot) in array.enumerate() {
                 
                 let sprite = addSpriteForDot(dot, position: pointForColumn(dot.column, row: startRow))
-                let delay = 0.1 + 0.2 * NSTimeInterval(array.count - idx - 1)
+                let totalDuration = sprite.animateNewDot(dot, startRow: startRow, totalLength: array.count - idx)
 
-                let duration = NSTimeInterval(startRow - dot.row) * 0.1
-                longestDuration = max(longestDuration, duration + delay)
-
-                let newPosition = pointForColumn(dot.column, row: dot.row)
-                let moveAction = SKAction.moveTo(newPosition, duration: duration)
-                moveAction.timingMode = .EaseOut
-                sprite.alpha = 0
-                sprite.runAction(
-                    SKAction.sequence([
-                        SKAction.waitForDuration(delay),
-                        SKAction.group([
-                            SKAction.fadeInWithDuration(0.05),
-                            moveAction
-                        ])]))
+                longestDuration = max(longestDuration, totalDuration)
             }
         }
         runAction(SKAction.waitForDuration(longestDuration), completion: completion)
@@ -289,25 +253,6 @@ extension GameScene {
 //MARK: Utilities
 extension GameScene {
     
-    func pointForColumn(column: Int, row: Int) -> CGPoint {
-        return CGPointMake(
-            CGFloat(column) * TileWidth + TileWidth/2,
-            CGFloat(row) * TileHeight + TileHeight/2
-        )
-    }
-    
-    func convertPoint(point: CGPoint) -> (success: Bool, column: Int, row: Int) {
-        if  point.x >= 0 &&
-            point.x < CGFloat(NumColumns) * TileWidth &&
-            point.y >= 0 &&
-            point.y < CGFloat(NumRows)*TileHeight
-        {
-            return (true, Int(point.x / TileWidth), Int(point.y / TileHeight))
-        } else {
-            return (false, 0, 0)  // invalid location
-        }
-    }
-    
     func cleanChains() {
         self.chain.empty()
         
@@ -318,3 +263,4 @@ extension GameScene {
         self.square      = false
     }
 }
+

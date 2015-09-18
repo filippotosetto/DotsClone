@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3BF489CB48D610F6693A419B /* Pods_DotsClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C852AF2EEB1530301BA9E73 /* Pods_DotsClone.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		412005591BAC3B4B00854104 /* Level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 412005581BAC3B4B00854104 /* Level_1.json */; settings = {ASSET_TAGS = (); }; };
-		4120055B1BAC44EF00854104 /* Level_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4120055A1BAC44EF00854104 /* Level_2.json */; settings = {ASSET_TAGS = (); }; };
+		4120055F1BAC569100854104 /* Level_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 4120055E1BAC569100854104 /* Level_2.json */; settings = {ASSET_TAGS = (); }; };
 		41704FF51BAB3225003EFC10 /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41704FF41BAB3225003EFC10 /* Chain.swift */; settings = {ASSET_TAGS = (); }; };
 		41C017231BAAB50D005D4228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C017221BAAB50D005D4228 /* AppDelegate.swift */; };
 		41C017271BAAB50D005D4228 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C017261BAAB50D005D4228 /* GameScene.swift */; };
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		22954034EA1F686027136B4F /* Pods-DotsClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotsClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DotsClone/Pods-DotsClone.debug.xcconfig"; sourceTree = "<group>"; };
 		412005581BAC3B4B00854104 /* Level_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Level_1.json; path = Levels/Level_1.json; sourceTree = "<group>"; };
-		4120055A1BAC44EF00854104 /* Level_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_2.json; sourceTree = "<group>"; };
+		4120055E1BAC569100854104 /* Level_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Level_2.json; path = Levels/Level_2.json; sourceTree = "<group>"; };
 		41704FF41BAB3225003EFC10 /* Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
 		41C0171F1BAAB50D005D4228 /* DotsClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotsClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C017221BAAB50D005D4228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,9 +142,9 @@
 		41C017441BAACDE4005D4228 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
+				4120055E1BAC569100854104 /* Level_2.json */,
 				41C017451BAACE07005D4228 /* Level_0.json */,
 				412005581BAC3B4B00854104 /* Level_1.json */,
-				4120055A1BAC44EF00854104 /* Level_2.json */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -226,8 +226,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4120055B1BAC44EF00854104 /* Level_2.json in Resources */,
 				41C017311BAAB50D005D4228 /* LaunchScreen.storyboard in Resources */,
+				4120055F1BAC569100854104 /* Level_2.json in Resources */,
 				41C0172E1BAAB50D005D4228 /* Assets.xcassets in Resources */,
 				412005591BAC3B4B00854104 /* Level_1.json in Resources */,
 				41C0172C1BAAB50D005D4228 /* Main.storyboard in Resources */,

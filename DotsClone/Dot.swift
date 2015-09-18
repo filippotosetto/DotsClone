@@ -56,7 +56,7 @@ class Dot: Hashable, CustomStringConvertible {
     
     var column: Int
     var row: Int
-    var sprite: SKShapeNode?//SKSpriteNode?
+    var sprite: SKShapeNode?
     
     var properColor: UIColor {
         get {
