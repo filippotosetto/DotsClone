@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BF489CB48D610F6693A419B /* Pods_DotsClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C852AF2EEB1530301BA9E73 /* Pods_DotsClone.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		41704FF51BAB3225003EFC10 /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41704FF41BAB3225003EFC10 /* Chain.swift */; settings = {ASSET_TAGS = (); }; };
+		41C017231BAAB50D005D4228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C017221BAAB50D005D4228 /* AppDelegate.swift */; };
+		41C017271BAAB50D005D4228 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C017261BAAB50D005D4228 /* GameScene.swift */; };
+		41C017291BAAB50D005D4228 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C017281BAAB50D005D4228 /* GameViewController.swift */; };
+		41C0172C1BAAB50D005D4228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C0172A1BAAB50D005D4228 /* Main.storyboard */; };
+		41C0172E1BAAB50D005D4228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41C0172D1BAAB50D005D4228 /* Assets.xcassets */; };
+		41C017311BAAB50D005D4228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C0172F1BAAB50D005D4228 /* LaunchScreen.storyboard */; };
+		41C0173D1BAAB68E005D4228 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C0173C1BAAB68E005D4228 /* Array2D.swift */; settings = {ASSET_TAGS = (); }; };
+		41C017411BAAB6C0005D4228 /* Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C017401BAAB6C0005D4228 /* Dot.swift */; settings = {ASSET_TAGS = (); }; };
+		41C017431BAABD7E005D4228 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C017421BAABD7E005D4228 /* Level.swift */; settings = {ASSET_TAGS = (); }; };
+		41C017461BAACE07005D4228 /* Level_0.json in Resources */ = {isa = PBXBuildFile; fileRef = 41C017451BAACE07005D4228 /* Level_0.json */; settings = {ASSET_TAGS = (); }; };
+		41C017481BAACF12005D4228 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C017471BAACF12005D4228 /* Tile.swift */; settings = {ASSET_TAGS = (); }; };
+		41C0174A1BAACFE0005D4228 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C017491BAACFE0005D4228 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		22954034EA1F686027136B4F /* Pods-DotsClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotsClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DotsClone/Pods-DotsClone.debug.xcconfig"; sourceTree = "<group>"; };
+		41704FF41BAB3225003EFC10 /* Chain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
+		41C0171F1BAAB50D005D4228 /* DotsClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotsClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41C017221BAAB50D005D4228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		41C017261BAAB50D005D4228 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		41C017281BAAB50D005D4228 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		41C0172B1BAAB50D005D4228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		41C0172D1BAAB50D005D4228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		41C017301BAAB50D005D4228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		41C017321BAAB50D005D4228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41C0173C1BAAB68E005D4228 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		41C017401BAAB6C0005D4228 /* Dot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dot.swift; sourceTree = "<group>"; };
+		41C017421BAABD7E005D4228 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		41C017451BAACE07005D4228 /* Level_0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Level_0.json; path = Levels/Level_0.json; sourceTree = "<group>"; };
+		41C017471BAACF12005D4228 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		41C017491BAACFE0005D4228 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8C852AF2EEB1530301BA9E73 /* Pods_DotsClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotsClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E224F76AEF5E31D4221903BC /* Pods-DotsClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotsClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-DotsClone/Pods-DotsClone.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41C0171C1BAAB50D005D4228 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BF489CB48D610F6693A419B /* Pods_DotsClone.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		41C017161BAAB50D005D4228 = {
+			isa = PBXGroup;
+			children = (
+				41C017211BAAB50D005D4228 /* DotsClone */,
+				41C017201BAAB50D005D4228 /* Products */,
+				D7162DB1B55CE41DDF2D5D4B /* Pods */,
+				EBC3BA0F941AC5C726011BE3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		41C017201BAAB50D005D4228 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				41C0171F1BAAB50D005D4228 /* DotsClone.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		41C017211BAAB50D005D4228 /* DotsClone */ = {
+			isa = PBXGroup;
+			children = (
+				41C0173E1BAAB6A9005D4228 /* Data Model */,
+				41C0173B1BAAB67D005D4228 /* Helpers */,
+				41C0173A1BAAB5C9005D4228 /* Scenes */,
+				41C017391BAAB5BE005D4228 /* View Controllers */,
+				41C017381BAAB5A6005D4228 /* Support Files */,
+				41C017221BAAB50D005D4228 /* AppDelegate.swift */,
+			);
+			path = DotsClone;
+			sourceTree = "<group>";
+		};
+		41C017381BAAB5A6005D4228 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				41C017441BAACDE4005D4228 /* Levels */,
+				41C0172A1BAAB50D005D4228 /* Main.storyboard */,
+				41C0172D1BAAB50D005D4228 /* Assets.xcassets */,
+				41C0172F1BAAB50D005D4228 /* LaunchScreen.storyboard */,
+				41C017321BAAB50D005D4228 /* Info.plist */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		41C017391BAAB5BE005D4228 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				41C017281BAAB50D005D4228 /* GameViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		41C0173A1BAAB5C9005D4228 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				41C017261BAAB50D005D4228 /* GameScene.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		41C0173B1BAAB67D005D4228 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				41C0173C1BAAB68E005D4228 /* Array2D.swift */,
+				41C017491BAACFE0005D4228 /* Extensions.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		41C0173E1BAAB6A9005D4228 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				41C017401BAAB6C0005D4228 /* Dot.swift */,
+				41C017471BAACF12005D4228 /* Tile.swift */,
+				41C017421BAABD7E005D4228 /* Level.swift */,
+				41704FF41BAB3225003EFC10 /* Chain.swift */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		41C017441BAACDE4005D4228 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				41C017451BAACE07005D4228 /* Level_0.json */,
+			);
+			name = Levels;
+			sourceTree = "<group>";
+		};
+		D7162DB1B55CE41DDF2D5D4B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				22954034EA1F686027136B4F /* Pods-DotsClone.debug.xcconfig */,
+				E224F76AEF5E31D4221903BC /* Pods-DotsClone.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EBC3BA0F941AC5C726011BE3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C852AF2EEB1530301BA9E73 /* Pods_DotsClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		41C0171E1BAAB50D005D4228 /* DotsClone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41C017351BAAB50D005D4228 /* Build configuration list for PBXNativeTarget "DotsClone" */;
+			buildPhases = (
+				9D4120F0764C37397E1E6132 /* Check Pods Manifest.lock */,
+				41C0171B1BAAB50D005D4228 /* Sources */,
+				41C0171C1BAAB50D005D4228 /* Frameworks */,
+				41C0171D1BAAB50D005D4228 /* Resources */,
+				160DC243683CCE45734DDF44 /* Embed Pods Frameworks */,
+				A23E0064277C5357300FCA14 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DotsClone;
+			productName = DotsClone;
+			productReference = 41C0171F1BAAB50D005D4228 /* DotsClone.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		41C017171BAAB50D005D4228 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Conjure;
+				TargetAttributes = {
+					41C0171E1BAAB50D005D4228 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 41C0171A1BAAB50D005D4228 /* Build configuration list for PBXProject "DotsClone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 41C017161BAAB50D005D4228;
+			productRefGroup = 41C017201BAAB50D005D4228 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				41C0171E1BAAB50D005D4228 /* DotsClone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		41C0171D1BAAB50D005D4228 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41C017311BAAB50D005D4228 /* LaunchScreen.storyboard in Resources */,
+				41C0172E1BAAB50D005D4228 /* Assets.xcassets in Resources */,
+				41C0172C1BAAB50D005D4228 /* Main.storyboard in Resources */,
+				41C017461BAACE07005D4228 /* Level_0.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		160DC243683CCE45734DDF44 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DotsClone/Pods-DotsClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D4120F0764C37397E1E6132 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A23E0064277C5357300FCA14 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DotsClone/Pods-DotsClone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		41C0171B1BAAB50D005D4228 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41C017271BAAB50D005D4228 /* GameScene.swift in Sources */,
+				41C0173D1BAAB68E005D4228 /* Array2D.swift in Sources */,
+				41C017291BAAB50D005D4228 /* GameViewController.swift in Sources */,
+				41704FF51BAB3225003EFC10 /* Chain.swift in Sources */,
+				41C0174A1BAACFE0005D4228 /* Extensions.swift in Sources */,
+				41C017481BAACF12005D4228 /* Tile.swift in Sources */,
+				41C017411BAAB6C0005D4228 /* Dot.swift in Sources */,
+				41C017231BAAB50D005D4228 /* AppDelegate.swift in Sources */,
+				41C017431BAABD7E005D4228 /* Level.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		41C0172A1BAAB50D005D4228 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41C0172B1BAAB50D005D4228 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		41C0172F1BAAB50D005D4228 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41C017301BAAB50D005D4228 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		41C017331BAAB50D005D4228 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		41C017341BAAB50D005D4228 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		41C017361BAAB50D005D4228 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22954034EA1F686027136B4F /* Pods-DotsClone.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DotsClone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.conjure.DotsClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		41C017371BAAB50D005D4228 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E224F76AEF5E31D4221903BC /* Pods-DotsClone.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DotsClone/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.conjure.DotsClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		41C0171A1BAAB50D005D4228 /* Build configuration list for PBXProject "DotsClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41C017331BAAB50D005D4228 /* Debug */,
+				41C017341BAAB50D005D4228 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41C017351BAAB50D005D4228 /* Build configuration list for PBXNativeTarget "DotsClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41C017361BAAB50D005D4228 /* Debug */,
+				41C017371BAAB50D005D4228 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 41C017171BAAB50D005D4228 /* Project object */;
+}
