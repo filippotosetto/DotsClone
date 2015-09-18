@@ -18,6 +18,8 @@ class GameViewController: UIViewController, GameSceneDelegate{
     var movesLeft = 0
     var score = 0
     
+    var currentLevel = 0
+    
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -71,11 +73,9 @@ class GameViewController: UIViewController, GameSceneDelegate{
     @IBAction func restartAction(sender: AnyObject) {
         level.cleanDots()
         scene.removeAllDots() {
-            self.beginGame()
+            self.startNewLevel(self.currentLevel)
         }
-
     }
-    
     
     func beginGame() {
         movesLeft = level.maximumMoves
@@ -86,6 +86,12 @@ class GameViewController: UIViewController, GameSceneDelegate{
 
         updateLabels()
         shuffle()
+    }
+    
+    func startNewLevel(levelNumber: Int) {
+        self.level = Level(fileName: "Level_\(levelNumber)")
+        self.scene.level = self.level
+        self.beginGame()
     }
     
     func shuffle() {
@@ -104,6 +110,9 @@ class GameViewController: UIViewController, GameSceneDelegate{
             gameOverLavel.text = "YOU WIN"
             gameOverLavel.hidden = false
             restartButton.hidden = false
+            
+            self.currentLevel = self.currentLevel == 2 ? 0 : self.currentLevel + 1
+            
         } else if movesLeft == 0 {
             gameOverLavel.text = "GAME OVER"
             gameOverLavel.hidden = false
