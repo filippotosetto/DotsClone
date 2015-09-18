@@ -91,6 +91,7 @@ class Dot: Hashable, CustomStringConvertible {
                 (dot.column == self.column + 1 && dot.row == self.row) ||
                 (dot.row == self.row + 1 && dot.column == self.column) ||
                 (dot.row == self.row - 1 && dot.column == self.column)
+
     }
 }
 

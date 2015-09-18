@@ -82,32 +82,29 @@ extension GameScene {
             
             let (success, column, row) = convertPoint(endPoint!)
             if success, let dot = level.dotAtPosition(column: column, row: row) {
-                if !chain.dots.contains(dot) &&
-                    chain.lastDot().canBeConnected(dot) &&
-                    chain.firstDot().color == dot.color {
-                        
-                    chain.addDot(dot)
-                } else if chain.dots.contains(dot) && chain.firstDot().color == dot.color && chain.lastDot().canBeConnected(dot) {
-                    chain.addDot(dot)
-                    square = true
+                
+                // TODO: this logic needs to be refactored
+                if dot.canBeConnected(chain.lastDot()) && chain.firstDot().color == dot.color {
+                    if chain.length > 1 && dot != chain.dots[chain.length - 2] {
+                        square = chain.dots.contains(dot)
+                        chain.addDot(dot)
+                    } else if chain.length > 1 && dot == chain.dots[chain.length - 2] {
+                        square = false
+                        chain.removeLastDot()
+                    } else if chain.length == 1 {
+                        chain.addDot(dot)
+                    }
                 }
             }
         }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-
         self.lineNode?.removeFromParent()
         if chain.length > 1 {
-            handleMatches {
-                self.chain.empty()
-                
-                self.pathToDraw  = nil
-                self.lineNode    = nil
-                self.startPoint  = nil
-                self.endPoint    = nil
-                self.square = false
-            }
+            handleMatches { self.cleanChains() }
+        } else {
+            cleanChains()
         }
     }
     
@@ -309,5 +306,15 @@ extension GameScene {
         } else {
             return (false, 0, 0)  // invalid location
         }
+    }
+    
+    func cleanChains() {
+        self.chain.empty()
+        
+        self.pathToDraw  = nil
+        self.lineNode    = nil
+        self.startPoint  = nil
+        self.endPoint    = nil
+        self.square      = false
     }
 }

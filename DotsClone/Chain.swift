@@ -20,12 +20,16 @@ class Chain: CustomStringConvertible, Hashable {
         }
     }
     
+    func removeLastDot() {
+        dots.removeLast()
+    }
+    
     func firstDot() -> Dot {
         return dots[0]
     }
     
     func lastDot() -> Dot {
-        return dots[dots.count - 1]
+        return dots.last!//[dots.count - 1]
     }
     
     func empty() {
